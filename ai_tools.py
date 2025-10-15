@@ -8,6 +8,7 @@ def tokenize(data:list[str],mode:str,n:int=1) -> tuple[list[list[str]], list[lis
     for i in data:
         tmp_list = ["START"]
         if mode == 'char':
+            tmp_list += list(i.lower().rstrip())
             output_list.append(tmp_list)
         else:
             tmp_list += i.rstrip().lower().split(' ')
